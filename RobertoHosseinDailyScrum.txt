@@ -1,0 +1,176 @@
+Roberto Rubio
+Hossein Ghaffary
+
+11/03/2017
+
+1 What did i do since last Scrum?
+	Finish project proposal
+2 What do i do now?
+	Administrator login
+3 where do i need help from my teacher and my teammate or internet?
+	Change passwords
+
+ 
+1.What do i do about it?
+2.How do i solve it?
+3.how do i do it?
+
+
+////////////////////////////
+Roberto Rubio
+
+
+11/07/2017
+
+Roberto Rubio
+1 What did i do since last Scrum?
+	html css website
+	test and questions and answers php
+2 What do i do now?
+	Integrate PHP html and css
+3 where do i need help from my teacher and my teammate or internet?
+	integrate the masters template with css and html5
+
+ 
+1.What do i do about it?
+	
+2.How do i solve it?
+3.how do i do it?
+
+
+
+Hossein Ghaffary
+
+11/07/2017
+
+1 What did i do since last Scrum?
+	relational database almost done
+	design the logo for the website
+2 What do i do now?
+	work on the registration
+3 where do i need help from my teacher and my teammate or internet?
+	
+
+ 
+1.What do i do about it?
+2.How do i solve it?
+3.how do i do it?
+/////////////////////////////////////
+
+11/09/2017
+
+Roberto Rubio
+1 What did i do since last Scrum?
+	user registration
+2 What do i do now?
+	problems with integrating te components
+3 where do i need help from my teacher and my teammate or internet?
+	i erase my projects from my netbeans so we can restat with al the new modifications, and nothing
+	is working we lost some important code
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
+
+
+
+Hossein Ghaffary
+
+11/09/2017
+
+1 What did i do since last Scrum?
+	list of users add and delete
+2 What do i do now?
+	problems with integrating te components
+3 where do i need help from my teacher and my teammate or internet?
+	
+
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
+/////////////////////////////////////
+
+
+11/10/2017
+
+Roberto Rubio
+1 What did i do since last Scrum?
+	add questions
+	registration
+	lists edit and delete
+2 What do i do now?
+	prepare for the project for the teacher
+3 where do i need help from my teacher and my teammate or internet?
+	i erase my projects from my netbeans so we can restat with al the new modifications, and nothing
+	is working we lost some important code
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
+
+
+
+Hossein Ghaffary
+
+11/10/2017
+
+1 What did i do since last Scrum?
+	add students
+	change some html code
+	redesign the database, table students, questions table
+2 What do i do now?
+	problem twig code shows in the browser
+	preparing the code for time
+3 where do i need help from my teacher and my teammate or internet?
+	
+	problem twig code shows in the browser
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
+/////////////////////////////////////
+
+11/13/2017
+
+Roberto Rubio
+1 What did i do since last Scrum?
+	repair github
+	repair scrum
+	repair trello
+2 What do i do now?
+	work on tthe connection with our url
+3 where do i need help from my teacher and my teammate or internet?
+	how to create exams wuestions and test
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
+
+
+
+Hossein Ghaffary
+
+11/13/2017
+
+1 What did i do since last Scrum?
+	
+	change some html code
+	
+2 What do i do now?
+	
+	work on the link code
+        work on the grouping student
+3 where do i need help from my teacher and my teammate or internet?
+	
+	problem twig code shows in the browser
+ 
+1.What do i do about it?
+	not solved
+2.How do i solve it?
+3.how do i do it?
