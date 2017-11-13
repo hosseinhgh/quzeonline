@@ -1,0 +1,23 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Confirm delete{% endblock %}
+
+{% block content %}
+    <p><b>Are you sure you want to delete this student?</b></p>
+    <button onclick="window.location.href='/'">Cancel</button>
+    {# action not requried since we're already on URL looking like
+        action="/admin/products/delete/{{p.id}}" #}
+    <form method="post"  style="display: inline;">
+        <input type="hidden" name="confirmed" value="true">
+        <input type="submit" value="Delete">
+    </form>
+    <div>
+        <p>First Name: {{todo.task}}</p>
+        <p>Last Name: {{todo.dueDate}}</p>
+        <p>Email: {{todo.isDone}}</p>
+        <p>Gender: {{todo.isDone}}</p>
+        <p>Photo: {{todo.imagePath}}</p>
+    </div>
+
+
+{% endblock %}

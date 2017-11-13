@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./css/styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="description" content="test your knowledge">
+        <meta name="author" content="roberto rubio">
+        <meta name="keywords" content="test,online,affordable">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Default{% endblock %}</title>
+        {% block headextra %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="brand">
+                    <img src="images/horoLogo.png" alt="" />
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="/addSubject">Services</a></li>
+                        <li><a href="about.php">About</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header><!--end of header-->
+        <div id="centeredContent">
+            {% if userSession %}
+                <p>You're logged in as {{ userSession.name }}.
+                    You may <a href="/logout">logout</a></p>
+            {% else %}
+                <p>You're not logged in. You may <a href="/register">Register</a>
+                or <a href="/login">Login</a>.</p>
+            {% endif %}
+                
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            <p>Created by <a href="#">WebSpawn</a>, Copyright Online Examination &copy; 2017</p>
+        </footer>
+    </body>
+</html>

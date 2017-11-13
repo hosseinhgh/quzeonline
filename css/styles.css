@@ -1,0 +1,266 @@
+body{
+    font-family: arial;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/*globlal*/
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden; 
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+label{
+    display: inline-block;
+    width: 180px;
+}
+input[type='text']{
+    width: 97%;
+    padding: 4px;
+    border-radius: 5px;
+    border:1px #ccc solid;
+}
+.button1{
+    height: 38px;
+    background:#e8491d;
+    border: 0;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dark{
+    padding: 15px;
+    background: #666666;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*header*/
+header{
+    background: #666666;
+    color: #ffffff; 
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;   
+}
+
+header a{
+    color:#ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #brand{
+    float: left;
+}
+
+header #brand h1{
+    margin: 0;
+}
+
+header #brand img{
+    width: 250px;
+    margin: 0;
+    padding: 10px;
+}
+
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+
+header .light, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/*showcase*/
+#showcase{
+    min-height:400px;
+    background: url('../images/mainImage.jpg')no-repeat 0 -400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p{
+    font-size: 20px;
+}
+
+#newsletter{
+    background: #666666;
+    padding: 15px;
+    color: #ffffff;
+}
+
+#newsletter h1{
+    float: left;
+}
+
+#newsletter form{
+    float: right;
+    margin-top: 15px;
+}
+
+#newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+/*boxes*/
+#boxes{
+    margin-top:20px;
+}
+
+#boxes .box{
+    float: left;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+#boxes .box .img{
+    width: 80px;
+}
+
+aside#sideBar{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+
+article#mainCol{
+    float: left;
+    width: 65%;
+}
+
+/*services*/
+ul#services li{
+    list-style: none;
+    padding: 20px;
+    border: #cccccc solid 3px;
+    margin-bottom: 5px;
+    background: #e6e6e6;
+}
+
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+    width:90%;
+    padding: 5px;
+}
+
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #e8491d;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer a{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover{
+    font-weight:light;
+}
+
+/*media queries*/
+@media(max-width: 768px){
+    header #brand,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    article#mainCol,
+    aside#dark{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    
+    header{
+        padding-bottom:20px;
+        
+    }
+    #showcase h1{
+        margin-top:40px;
+    }
+    #newsletter button, .quote button{
+        display:block;
+        width:100%;
+    }
+    #newsletter form input[type="email"]{
+        width:100%;
+        margin-bottom:5px;
+    }
+    .quote input{
+        width:100%;
+        margin-bottom:5px;
+    }
+    .quote textarea{
+        width:100%;
+        margin-bottom:5px;
+    }
+    
+    #centeredContent {
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    width: 400px; /* 960px */
+    background-color: white;        
+    }
+}
+
+#centeredContent {
+    font-size: 22px;
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: auto;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    width: 60%;
+    background-color: #5F9EA0;        
+    }
+    
+    
+    
+    .roweven { background-color: bisque; }
+
+.rowodd { background-color: lightsalmon; }
