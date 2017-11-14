@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <title>HoRo | Services</title>
-        <link rel="stylesheet" href="./css/styles.css">      
+        <link rel="stylesheet" href="./css/styles.css">
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
         <meta name="author" content="roberto rubio">
@@ -66,28 +66,30 @@ and open the template in the editor.
                         <form class="quote">
                             <div>
                                 <label>Name</label><br>
-                                <input type="text" placeholder="name">
+                                <input type="text" placeholder="Full Name">
                             </div>
                             <div>
                                 <label>Email</label><br>
-                                <input type="email" placeholder="email address">
+                                <input type="Email" placeholder="Email Address">
                             </div>
                             <div>
                                 <label>Message</label><br>
-                                <textarea placeholder="Message"></textarea>
+                                <textarea placeholder="Place Your Message here ..."></textarea>
                             </div>
-                            
-                            <div>
+
+                            <div id="btn1">
                                 <button class="button1" type="submit">Save</button>
                             </div>
                         </form>
                     </div>
                 </aside>
             </div>
-        </section>>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </section>
 
         <footer>
             <p>Created by <a href="#">WebSpawn</a>, Copyright Online Examination &copy; 2017</p>
+            <script src="js/scrowUpBtn.js"></script>
         </footer>
     </body>
 </html>
