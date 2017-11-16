@@ -2,6 +2,7 @@
 <html>
     <head>
         <link href="./css/styles.css" rel="stylesheet">
+       <!-- <link href="./js/scrowUpBtn.js" rel="stylesheet">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
@@ -19,10 +20,22 @@
                 </div>
                 <nav>
                     <ul>
+<<<<<<< HEAD
+                        <li><a href="/">Home</a></li>
+
+                        {% if userSession %}
+                        <li><a href="/addSubject">Add subject</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        {% endif %}
+=======
                         <li><a href="index.php">Home</a></li>
                         <li><a href="/addSubject">Services</a></li>
                         <li><a href="about.php">About</a></li>
-                        
+
+>>>>>>> 8731eda875173f2ecb7c3f842db049d62682def8
                     </ul>
                 </nav>
             </div>
@@ -34,12 +47,19 @@
             {% else %}
                 <p>You're not logged in. You may <a href="/register">Register</a>
                 or <a href="/login">Login</a>.</p>
+
             {% endif %}
-                
+
             {% block content %}{% endblock %}
         </div>
         <footer>
             <p>Created by <a href="#">WebSpawn</a>, Copyright Online Examination &copy; 2017</p>
+<<<<<<< HEAD
+                      <script src="js/scrowUpBtn.js"></script>
+  
+=======
+            <script src="js/scrowUpBtn.js"></script>
+>>>>>>> 7d0bda4675b3f75bdb3b6bbf44eb9b3a2d9a92f2
         </footer>
     </body>
 </html>
