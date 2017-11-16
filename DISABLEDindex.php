@@ -10,7 +10,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="./css/styles.css">
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
-        <meta name="author" content="roberto rubio">
+        <meta name="author" content="roberto rubio,hossein ghaffary">
         <meta name="keywords" content="test,online,affordable">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -27,6 +27,7 @@ and open the template in the editor.
                         <li><a href="services.php">Services</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="slimTodo.php">Register</a></li>
+                         <li><a href="/login">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
@@ -34,8 +35,10 @@ and open the template in the editor.
 
         <section id="showcase">
             <div class="container">
-                <h1>Test Your Knowledge</h1><br />
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <h1 style="color: white;
+    text-shadow: 2px 2px 4px #000000;">Test Your Knowledge</h1><br />
+                <p style="color: white;
+    text-shadow: 2px 2px 4px #000000;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
         </section><!--end of section showcase-->
 
