@@ -249,7 +249,7 @@ footer a:hover{
     padding: 20px 20px 20px 20px;
     width: 400px; /* 960px */
     background-color: white;
-<<<<<<< HEAD
+
     }
 }
 /*-------------------------------------------------------------*/
@@ -286,9 +286,9 @@ footer a:hover{
 
     }
 }
-=======
-    }
-}
+
+    
+
 /*-------------------------------------------------------------*/
 /* Media querie for width under 580 px -- You can play with the pixels*/
 @media screen and (max-width: 580px) {
@@ -323,7 +323,7 @@ footer a:hover{
 
     }
 }
->>>>>>> 7d0bda4675b3f75bdb3b6bbf44eb9b3a2d9a92f2
+
 #showcase{
     font-variant: small-caps;
     color: #e8491d;
@@ -362,15 +362,15 @@ footer a:hover{
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
     width: 60%;
-<<<<<<< HEAD
+
     background-color: #5F9EA0;
-    }
-=======
+    
+
     background-color:#5F9EA0;
     }
     
     
->>>>>>> 7d0bda4675b3f75bdb3b6bbf44eb9b3a2d9a92f2
+
 
 
 
