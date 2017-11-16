@@ -22,9 +22,9 @@
                     <ul>
 <<<<<<< HEAD
                         <li><a href="/">Home</a></li>
-                        
+
                         {% if userSession %}
-                        <li><a href="/addSubject">Add subject</a></li>                            
+                        <li><a href="/addSubject">Add subject</a></li>
                         <li><a href="/logout">Logout</a></li>
                         {% else %}
                         <li><a href="/login">Login</a></li>
@@ -34,7 +34,7 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="/addSubject">Services</a></li>
                         <li><a href="about.php">About</a></li>
-                                           
+
 >>>>>>> 8731eda875173f2ecb7c3f842db049d62682def8
                     </ul>
                 </nav>
@@ -47,13 +47,14 @@
             {% else %}
                 <p>You're not logged in. You may <a href="/register">Register</a>
                 or <a href="/login">Login</a>.</p>
-                   
+
             {% endif %}
-                
+
             {% block content %}{% endblock %}
         </div>
         <footer>
             <p>Created by <a href="#">WebSpawn</a>, Copyright Online Examination &copy; 2017</p>
+            <script src="js/scrowUpBtn.js"></script>
         </footer>
     </body>
 </html>
