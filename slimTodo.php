@@ -246,7 +246,7 @@ $app->post('/addStudent', function() use ($app) {
         }
     } else { // no file uploaded
         if ($op == 'add') {
-            array_push($errorList, "Image is required when creating new student");
+            array_push($errorList, "Image is required when registering new student");
         }
     }
 
