@@ -5,7 +5,7 @@
 {% block content %}
     {% if userSession %}
         <table border="1">
-            
+
             <tr>
                 <th>#</th>
                 <th>First Name</th>
@@ -15,7 +15,7 @@
                 <th>Photo</th>
                 <th>ACTION</th>
             </tr>
-            
+
             {% for t in todoList %}
                 <tr>
                     <td>{{loop.index}}</td>
@@ -28,11 +28,18 @@
                         <a href="/edit/{{t.id}}">EDIT</a>
                         <a href="/delete/{{t.id}}">DELETE</a>
                     </td>
-                    
+
                 </tr>
             {% endfor %}
-            
+
         </table>
+
+        <div class="paginationContainer">
+            {% for page in range(1,maxPages) %}
+                <a href="/students/{{page}}">{{page}}</a> 
+            {% endfor %}
+        </div>
+
     {% else %}
         <p>you must register or login to view data</p>
     {% endif %}
