@@ -57,7 +57,7 @@ if (!isset($_SESSION['user'])) {
 
 $app->get('/students(/:page)', function($page = 1) use ($app) {
     $perPage = 4;
-    $totalCount = DB::queryFirstField ("SELECT COUNT(*) AS count FROM users");
+    $totalCount = DB::queryFirstField ("SELECT COUNT(*) AS count FROM students");
     $maxPages = ($totalCount + $perPage - 1) / $perPage;
     if ($page > $maxPages) {
         http_response_code(404);
@@ -79,10 +79,12 @@ $twig->addGlobal('userSession', $_SESSION['user']);
 $app->get('/', function() use ($app) {
     $todoList = array();
     if ($_SESSION['user']) {
-        $todoList = DB::query('SELECT * FROM todos WHERE adminId=%i', $_SESSION['user']['id']);
+        $studentList = DB::query('SELECT * FROM students WHERE adminId=%i', $_SESSION['user']['id']);
     }
-    $app->render('index.html.twig', array('todoList' => $todoList));
+    $app->render('students.html.twig', array('studentsList' => $studentList));
 });
+
+
 $app->get('/sumaryQuestions', function() use ($app) {
     
     if ($_SESSION['user']) {
@@ -435,7 +437,7 @@ $app->post('/delete/:id', function($id) use ($app) {
     }
 });
 
-
+////you can copy this code and add questions
 //add subject
 $app->get('/addSubject', function() use ($app) {
     if (!$_SESSION['user']) {
