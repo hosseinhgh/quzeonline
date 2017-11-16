@@ -1,6 +1,6 @@
 {% extends "master.html.twig" %}
 
-{% block title %}students list{% endblock %}
+{% block title %}Students List{% endblock %}
 
 {% block content %}
     {% if userSession %}
@@ -23,7 +23,7 @@
                     <td>{{t.lastName}}</td>
                     <td>{{t.email}}</td>
                     <td>{{t.gender}}</td>
-                    <td><img src="{{t.imagePath}}" width="40"></td>
+                    <td><img src="{{t.imagePath}}" width="60"></td>
                     <td>
                         <a href="/edit/{{t.id}}">EDIT</a>
                         <a href="/delete/{{t.id}}">DELETE</a>
