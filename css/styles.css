@@ -1,6 +1,6 @@
 body{
     font-family: arial;
-    font-size: 15px;
+    font-size: 100px;
     line-height: 1.5;
     padding: 0;
     margin: 0;
@@ -249,6 +249,76 @@ footer a:hover{
     padding: 20px 20px 20px 20px;
     width: 400px; /* 960px */
     background-color: white;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+    }
+}
+/*-------------------------------------------------------------*/
+/* Media querie for width under 580 px -- You can play with the pixels*/
+@media screen and (max-width: 580px) {
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    header li{
+        display: block;
+        margin-left: -20px;
+    }
+}
+
+/* Form is going automaticly down and shrinks 100% */
+@media screen and (max-width: 768px){
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    #btn1{
+        background-color: red;
+        width: 50%;
+        border-radius: 10px;
+    }
+    .button1:hover {
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        font-weight: bold;
+
+    }
+}
+
+    
+
+/*-------------------------------------------------------------*/
+/* Media querie for width under 580 px -- You can play with the pixels*/
+@media screen and (max-width: 580px) {
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    header li{
+        display: block;
+        margin-left: -20px;
+>>>>>>> 6cb0e8bf2bbb343f57c5696a12d3e79e5ae50c6f
+    }
+}
+/*-------------------------------------------------------------*/
+/* Media querie for width under 580 px -- You can play with the pixels*/
+@media screen and (max-width: 580px) {
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    header li{
+        display: block;
+        margin-left: -20px;
+>>>>>>> 2bbe554e4588e342bfd0e5424462df757f0a9754
     }
 }
 /*-------------------------------------------------------------*/
@@ -315,6 +385,107 @@ footer a:hover{
 }
 /*-------------------------------------------------------------*/
 
+/* Form is going automaticly down and shrinks 100% */
+@media screen and (max-width: 768px){
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    #btn1{
+        background-color: red;
+        width: 50%;
+        border-radius: 10px;
+    }
+    .button1:hover {
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        font-weight: bold;
+
+    }
+}
+#showcase{
+    font-variant: small-caps;
+    color: #e8491d;
+
+}
+.pageTitle{
+    color: #e8491d;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  color: #e8491d;
+  background-color: white;
+  border: 2px solid #e8491d;
+}
+/*-------------------------------------------------------------*/
+
+/* Form is going automaticly down and shrinks 100% */
+@media screen and (max-width: 768px){
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    #btn1{
+        background-color: red;
+        width: 50%;
+        border-radius: 10px;
+    }
+    .button1:hover {
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        font-weight: bold;
+
+    }
+}
+
+#showcase{
+    font-variant: small-caps;
+    color: #e8491d;
+
+}
+.pageTitle{
+    color: #e8491d;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  color: #e8491d;
+  background-color: white;
+  border: 2px solid #e8491d;
+}
+/*-------------------------------------------------------------*/
+
 #centeredContent {
     font-size: 22px;
     color: #ffffff;
@@ -323,8 +494,25 @@ footer a:hover{
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
     width: 60%;
+<<<<<<< HEAD
     background-color: #5F9EA0;
     }
+=======
+<<<<<<< HEAD
+    background-color: #5F9EA0;
+    }
+=======
+
+    background-color: #5F9EA0;
+    
+
+    background-color:#5F9EA0;
+    }
+    
+    
+
+>>>>>>> 6cb0e8bf2bbb343f57c5696a12d3e79e5ae50c6f
+>>>>>>> 2bbe554e4588e342bfd0e5424462df757f0a9754
 
 
 
