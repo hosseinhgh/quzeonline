@@ -10,7 +10,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="./css/styles.css">
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
-        <meta name="author" content="roberto rubio">
+        <meta name="author" content="roberto rubio,hossein ghaffary">
         <meta name="keywords" content="test,online,affordable">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -27,6 +27,7 @@ and open the template in the editor.
                         <li><a href="services.php">Services</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="slimTodo.php">Register</a></li>
+                         <li><a href="/login">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
