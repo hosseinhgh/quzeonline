@@ -266,7 +266,7 @@ footer a:hover{
 }
 
 /* Form is going automaticly down and shrinks 100% */
-/*@media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
 
     aside#sideBar{
         width: 100%;
@@ -313,7 +313,7 @@ footer a:hover{
   background-color: white;
   border: 2px solid #e8491d;
 }
--------------------------------------------------------------
+/*-------------------------------------------------------------*/
 
 #centeredContent {
     font-size: 22px;
@@ -323,11 +323,11 @@ footer a:hover{
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
     width: 60%;
-    background-color: #5F9EA0;
+    background-color:#5F9EA0;
     }
 
 
 
     .roweven { background-color: bisque; }
 
-.rowodd { background-color: lightsalmon; }*/
+.rowodd { background-color: lightsalmon; }
