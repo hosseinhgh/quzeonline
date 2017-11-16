@@ -11,7 +11,7 @@ body{
 .container{
     width: 80%;
     margin: auto;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 ul{
@@ -54,10 +54,10 @@ input[type='text']{
 /*header*/
 header{
     background: #666666;
-    color: #ffffff; 
+    color: #ffffff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #e8491d 3px solid;   
+    border-bottom: #e8491d 3px solid;
 }
 
 header a{
@@ -95,11 +95,11 @@ header nav{
 
 header .light, header .current a{
     color: #e8491d;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 header a:hover{
-    color: #cccccc;
+    color: #e8491d;
     font-weight: bold;
 }
 
@@ -183,6 +183,8 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
     padding: 5px;
 }
 
+
+
 footer{
     padding: 20px;
     margin-top: 20px;
@@ -215,17 +217,19 @@ footer a:hover{
         text-align: center;
         width: 100%;
     }
-    
+
     header{
         padding-bottom:20px;
-        
+
     }
     #showcase h1{
-        margin-top:40px;
+        margin-top:20px;
     }
     #newsletter button, .quote button{
         display:block;
+        border-radius: 10px;
         width:100%;
+        font-size: 14px;
     }
     #newsletter form input[type="email"]{
         width:100%;
@@ -239,14 +243,77 @@ footer a:hover{
         width:100%;
         margin-bottom:5px;
     }
-    
+
     #centeredContent {
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
     width: 400px; /* 960px */
-    background-color: white;        
+    background-color: white;
     }
 }
+/*-------------------------------------------------------------*/
+/* Media querie for width under 580 px -- You can play with the pixels*/
+@media screen and (max-width: 580px) {
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    header li{
+        display: block;
+        margin-left: -20px;
+    }
+}
+
+/* Form is going automaticly down and shrinks 100% */
+@media screen and (max-width: 768px){
+
+    aside#sideBar{
+        width: 100%;
+        float: left;
+    }
+    #btn1{
+        background-color: red;
+        width: 50%;
+        border-radius: 10px;
+    }
+    .button1:hover {
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        font-weight: bold;
+
+    }
+}
+#showcase{
+    font-variant: small-caps;
+    color: #e8491d;
+
+}
+.pageTitle{
+    color: #e8491d;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  color: #e8491d;
+  background-color: white;
+  border: 2px solid #e8491d;
+}
+/*-------------------------------------------------------------*/
 
 #centeredContent {
     font-size: 22px;
@@ -256,11 +323,11 @@ footer a:hover{
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
     width: 60%;
-    background-color: #5F9EA0;        
+    background-color: #5F9EA0;
     }
-    
-    
-    
+
+
+
     .roweven { background-color: bisque; }
 
 .rowodd { background-color: lightsalmon; }
