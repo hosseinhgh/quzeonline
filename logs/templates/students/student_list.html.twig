@@ -1,0 +1,48 @@
+{% extends "master.html.twig" %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+    {% if userSession %}
+        <table border="1">
+
+            <tr>
+                <th>#</th>
+                <th>admin Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Photo</th>
+                <th>ACTION</th>
+            </tr>
+
+            {% for t in studentList %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{t.adminId}}</td>
+                    <td>{{t.firstName}}</td>
+                    <td>{{t.lastName}}</td>
+                    <td>{{t.email}}</td>
+                    <td>{{t.gender}}</td>
+                    <td><img src="{{t.imagePath}}" width="60"></td>
+                    <td>
+                        <a href="/students/edit/{{t.id}}">EDIT</a>
+                        <a href="/students/delete/{{t.id}}">DELETE</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+        </table>
+
+        <div class="paginationContainer">
+            {% for page in range(1,maxPages) %}
+                <a href="/students/{{page}}">{{page}}</a> 
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <p>you must register or login to view data</p>
+    {% endif %}
+{% endblock %}

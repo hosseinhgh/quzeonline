@@ -1,0 +1,19 @@
+{# empty Twig template #}
+{% extends "master.html.twig" %}
+
+{% block title %}Delete question{% endblock %}
+
+{% block content %}
+
+    <p> Are you sure you want to delete this question?</p>
+    <form style="display: inline-block" action="/question/list">
+        <input type="submit" value="Cancel"></form>
+    <form style="display: inline-block" method="post">
+        <input type="hidden" name="delete" value="confirmed">
+        <input type="submit" value="Yes, delete"></form>
+    <p>{{v.questiondesc}} : {{v.answer_1}} , {{v.answer_2}},{{v.answer_3}},{{v.answer_4}},{{v.correct_answer}},</p>
+        
+            
+    
+    
+{% endblock content %}

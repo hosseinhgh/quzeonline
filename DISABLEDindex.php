@@ -26,8 +26,8 @@ and open the template in the editor.
                         <li class="current"><a href="index.php">Home</a></li>
                         <li><a href="services.php">Services</a></li>
                         <li><a href="about.php">About</a></li>
-                        <li><a href="register">Register</a></li>
-                        <li><a href="login">LogIn</a></li>
+                        <li><a href="slimTodo.php">Register</a></li>
+                         <li><a href="/login">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
@@ -35,8 +35,10 @@ and open the template in the editor.
 
         <section id="showcase">
             <div class="container">
-                <h1>Test Your Knowledge</h1><br />
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <h1 style="color: white;
+    text-shadow: 2px 2px 4px #000000;">Test Your Knowledge</h1><br />
+                <p style="color: white;
+    text-shadow: 2px 2px 4px #000000;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
         </section><!--end of section showcase-->
 

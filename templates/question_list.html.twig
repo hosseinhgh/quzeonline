@@ -1,0 +1,37 @@
+{% extends "master.html.twig" %}
+
+{% block title %}subjects list{% endblock %}
+
+{% block content %}
+     <p><a href="/subjetcs/list/add">Add subject</a></p>
+    {% if userSession %}
+        <table border="1">
+            
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+            
+            {% for t in List %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{t.name}}</td>
+                    <td>{{t.description}}</td>
+                    <td>{{t.time}}</td>
+                    
+                    <td>
+                        <a href="/subjects/edit/{{t.id}}">EDIT</a>
+                        <a href="/subjects/delete/{{t.id}}">DELETE</a>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+            
+        </table>
+    {% else %}
+        <p>you must register or login to view data</p>
+    {% endif %}
+{% endblock %}

@@ -7,10 +7,10 @@ and open the template in the editor.
 <html>
     <head>
         <title>HoRo | Services</title>
-        <link rel="stylesheet" href="./css/styles.css">      
+        <link rel="stylesheet" href="./css/styles.css">
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
-        <meta name="author" content="roberto rubio">
+        <meta name="author" content="hossein ghaffary,roberto rubio">
         <meta name="keywords" content="test,online,affordable">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -25,7 +25,8 @@ and open the template in the editor.
                         <li><a href="index.php">Home</a></li>
                         <li class="current"><a href="services.php">Services</a></li>
                         <li><a href="about.php">About</a></li>
-                        <li><a href="slimTodo.php">Register</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a href="login">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,28 +67,30 @@ and open the template in the editor.
                         <form class="quote">
                             <div>
                                 <label>Name</label><br>
-                                <input type="text" placeholder="name">
+                                <input type="text" placeholder="Full Name">
                             </div>
                             <div>
                                 <label>Email</label><br>
-                                <input type="email" placeholder="email address">
+                                <input type="Email" placeholder="Email Address">
                             </div>
                             <div>
                                 <label>Message</label><br>
-                                <textarea placeholder="Message"></textarea>
+                                <textarea placeholder="Place Your Message here ..."></textarea>
                             </div>
-                            
-                            <div>
+
+                            <div id="btn1">
                                 <button class="button1" type="submit">Save</button>
                             </div>
                         </form>
                     </div>
                 </aside>
             </div>
-        </section>>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </section>
 
         <footer>
             <p>Created by <a href="#">WebSpawn</a>, Copyright Online Examination &copy; 2017</p>
+            <script src="js/scrowUpBtn.js"></script>
         </footer>
     </body>
 </html>

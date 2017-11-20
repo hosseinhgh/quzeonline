@@ -1,0 +1,39 @@
+{% extends "master.html.twig" %}
+
+{% block title %}students list{% endblock %}
+
+{% block content %}
+    {% if userSession %}
+        <table border="1">
+            
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Photo</th>
+                <th>ACTION</th>
+            </tr>
+            
+            {% for t in todoList %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{t.firstName}}</td>
+                    <td>{{t.lastName}}</td>
+                    <td>{{t.email}}</td>
+                    <td>{{t.gender}}</td>
+                    <td><img src="{{t.imagePath}}" width="40"></td>
+                    <td>
+                        <a href="/edit/{{t.id}}">EDIT</a>
+                        <a href="/delete/{{t.id}}">DELETE</a>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+            
+        </table>
+    {% else %}
+        <p>you must register or login to view data</p>
+    {% endif %}
+{% endblock %}

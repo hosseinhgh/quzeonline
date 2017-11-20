@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charset="UTF-8">
         <meta name="description" content="test your knowledge">
-        <meta name="author" content="roberto rubio,hossein ghaffary">
+        <meta name="author" content="roberto rubio">
         <meta name="keywords" content="test,online,affordable">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Default{% endblock %}</title>
@@ -30,7 +20,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="service.php">Services</a></li>
+                        <li><a href="/addedit">Services</a></li>
                         <li><a href="about.php">About</a></li>
                         
                     </ul>
@@ -40,7 +30,7 @@
         <div id="centeredContent">
             {% if userSession %}
                 <p>You're logged in as {{ userSession.name }}.
-                    You may <a href="/login">logIn</a></p>
+                    You may <a href="/logout">logout</a></p>
             {% else %}
                 <p>You're not logged in. You may <a href="/register">Register</a>
                 or <a href="/login">Login</a>.</p>

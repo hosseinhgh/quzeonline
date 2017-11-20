@@ -3,7 +3,7 @@
 {% block title %}Confirm delete{% endblock %}
 
 {% block content %}
-    <p><b>Are you sure you want to delete this subject?</b></p>
+    <p><b>Are you sure you want to delete this student?</b></p>
     <button onclick="window.location.href='/'">Cancel</button>
     {# action not requried since we're already on URL looking like
         action="/admin/products/delete/{{p.id}}" #}
@@ -12,9 +12,11 @@
         <input type="submit" value="Delete">
     </form>
     <div>
-        <p>Name: {{subject.task}}</p>
-        <p>Description: {{subject.dueDate}}</p>
-        
+        <p>First Name: {{students.firstname}}</p>
+        <p>Last Name: {{students.lastname}}</p>
+        <p>Email: {{students.email}}</p>
+        <p>Gender: {{students.gender}}</p>
+        <p>Photo: {{students.imagePath}}</p>
     </div>
 
 
