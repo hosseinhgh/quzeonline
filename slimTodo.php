@@ -12,7 +12,7 @@ DB::$user = 'cp4809_horoExamO';
 DB::$encoding = 'utf8';
 DB::$password = 'horoExamOnline';
 DB::$host = 'ipd10.com';
-//ia3ohic8
+
 DB::$error_handler = 'sql_error_handler';
 DB::$nonsql_error_handler = 'nonsql_error_handler';
 
@@ -55,6 +55,24 @@ if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
 
+$app->get('/students(/:page)', function($page = 1) use ($app) {
+    $perPage = 4;
+    $totalCount = DB::queryFirstField ("SELECT COUNT(*) AS count FROM students");
+    $maxPages = ($totalCount + $perPage - 1) / $perPage;
+    if ($page > $maxPages) {
+        http_response_code(404);
+        $app->render('not_found.html.twig');
+        return;
+    }
+    $skip = ($page - 1) * $perPage;
+    $studentList = DB::query("SELECT * FROM users ORDER BY id LIMIT %d,%d", $skip, $perPage);
+    $app->render('students.html.twig', array(
+        "studentList" => $studentList,
+        "maxPages" => $maxPages
+        ));
+});
+
+
 $twig = $app->view()->getEnvironment();
 $twig->addGlobal('userSession', $_SESSION['user']);
 
@@ -63,7 +81,24 @@ $app->get('/student/list', function() use ($app) {
     if ($_SESSION['user']) {
         $studentList = DB::query('SELECT * FROM students WHERE adminId=%i', $_SESSION['user']['id']);
     }
+<<<<<<< HEAD
     $app->render('student_list.html.twig', array('$studentList' => $studentList));
+=======
+    $app->render('students.html.twig', array('studentsList' => $studentList));
+});
+
+
+$app->get('/sumaryQuestions', function() use ($app) {
+    
+    if ($_SESSION['user']) {
+        $countQuestions = DB::queryFirstField('SELECT COUNT(*) FROM questions');
+        $count = array(
+            'countQ' => $countQuestions,
+        );
+    }
+    $app->render('summaryQuestions.html.twig');
+    
+>>>>>>> 80e2e666fed41387de4040932cd87a5ec69ffde3
 });
 
 
@@ -75,6 +110,110 @@ $app->post('/subject/list', function() use ($app) {
     $app->render('subject_list.html.twig', array('List' => $List));
 });
 //?????????????????????????????????????????????????????????????????????????????????????????????????
+
+
+
+
+
+
+
+
+//////password reset random string
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+$app->map('/passreset/request', function() use ($app, $log) {//app and log no need because is the same page
+    if ($app->request()->isGet()) {
+        // State 1: first show
+        $app->render('passreset_request.html.twig');
+        return;
+    }
+    // in Post - receiving submission
+    $email = $app->request()->post('email');
+    $user = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
+    if ($user) {
+        $secretToken = generateRandomString(50);
+        
+        DB::insertUpdate('passresets', array(
+            'userId' => $user['id'],
+            'secretToken' => $secretToken,
+            'expiryDateTime' => date("Y-m-d H:i:s", strtotime("+5 minutes"))
+        ));
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . '/passreset/token/' . $secretToken;
+        $emailBody = $app->view()->render('passreset_email.html.twig', array(
+            'name' => $user['name'], // or 'username' or 'firstName'
+            // 'name' => 'User', if you don't have user's name in your database
+            'url' => $url
+        ));
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html\r\n";
+        $headers .= "From: Noreply <noreply@ipd10.com>\r\n";
+        $headers .= "Date: " . date("Y-m-d H:i:s");
+        $toEmail = sprintf("%s <%s>", htmlentities($user['name']), $user['email']);
+        // $headers.= sprintf("To: %s\r\n", $user['email']);
+
+        mail($toEmail, "Your password reset for " . $_SERVER['SERVER_NAME'], $emailBody, $headers);
+        $log->info('Email sent for password reset for user id=' . $user['id']);
+        $app->render('passreset_request_success.html.twig');
+    } else { // State 3: failed request, email not registered
+        $app->render('passreset_request.html.twig', array('error' => true));
+    }
+})->via('GET', 'POST');
+
+$app->map('/passreset/token/:secretToken', function($secretToken) use ($app, $log) {
+    $row = DB::queryFirstRow("SELECT * FROM passresets WHERE secretToken=%s", $secretToken);//passreset table in database
+    if (!$row) { // row not found
+        $app->render('passreset_notfound_expired.html.twig');
+        return;
+    }
+    if (strtotime($row['expiryDateTime']) < time()) {
+        // row found but token expired
+        $app->render('passreset_notfound_expired.html.twig');
+        return;
+    }
+    //
+    $user = DB::queryFirstRow("SELECT * FROM users WHERE id=%d", $row['userId']);
+    if (!$user) {
+        $log->err(sprintf("Passreset for token %s user id=%d not found", $row['secretToken'], $row['userId']));
+        $app->render('error_internal.html.twig');
+        return;
+    }
+    if ($app->request()->isGet()) { // State 1: first show
+        $app->render('passreset_form.html.twig', array(
+            'name' => $user['name'], 'email' => $user['email']
+        ));
+    } else { // receiving POST with new password
+        $pass1 = $app->request()->post('pass1');
+        $pass2 = $app->request()->post('pass2');
+        // FIXME: verify quality of the new password using a function
+        $errorList = array();
+        if ($pass1 != $pass2) {
+            array_push($errorList, "Passwords don't match");
+        } else { // TODO: do a better check for password quality (lower/upper/numbers/special)
+            if (strlen($pass1) < 2 || strlen($pass1) > 50) {
+                array_push($errorList, "Password must be between 2 and 50 characters long");
+            }
+        }
+        if ($errorList) { // 3. failed submission
+            $app->render('passreset_form.html.twig', array(
+                'errorList' => $errorList,
+                'name' => $user['name'],
+                'email' => $user['email']
+            ));
+        } else { // 2. successful submission
+            DB::update('users', array('password' => $pass1), 'id=%d', $user['id']);
+            $app->render('passreset_form_success.html.twig');
+        }
+    }
+})->via('GET', 'POST');
+
 
 
 
@@ -395,7 +534,11 @@ $app->post('/student/add/:op(/:id)', function($op, $id = -1) use ($app, $log) {
         }
     } else { // no file uploaded
         if ($op == 'add') {
+<<<<<<< HEAD
             array_push($errorList, "Image is not %100 required when registering");
+=======
+            array_push($errorList, "Image is required when registering new student");
+>>>>>>> 80e2e666fed41387de4040932cd87a5ec69ffde3
         }
     }
 
@@ -530,6 +673,7 @@ $app->get('/question/list', function() use ($app) {
     ));
 });
 
+<<<<<<< HEAD
 $app->get('/question/delete/:id', function($id) use ($app) {
     $subject = DB::queryFirstRow('SELECT * FROM questions WHERE id=%i', $id);
     $app->render('question_delete.html.twig', array(
@@ -540,6 +684,16 @@ $app->get('/question/delete/:id', function($id) use ($app) {
 $app->post('/question/delete/:id', function($id) use ($app) {
     DB::delete('questions', 'id=%i', $id);
     $app->render('question_delete_success.html.twig');
+=======
+////you can copy this code and add questions
+//add subject
+$app->get('/addSubject', function() use ($app) {
+    if (!$_SESSION['user']) {
+        $app->render('access_denied.html.twig');
+        return;
+    }
+    $app->render('todo_addeditSubject.html.twig');
+>>>>>>> 80e2e666fed41387de4040932cd87a5ec69ffde3
 });
 
 
